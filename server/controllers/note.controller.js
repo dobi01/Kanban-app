@@ -33,6 +33,20 @@ export function addNote(req, res) {
   });
 }
 
+export function editNote(req, res) {
+  if (!req.body.task) {
+    res.status(403).end();
+  }
+
+  Note.findOneAndUpdate({ id: req.params.noteId }, { task: req.body.task }).exec((err, note) => {
+    if (err) {
+      res.status(500).send(err);
+    }
+    res.json({ note });
+    res.status(200).end();
+  });
+}
+
 export function deleteNote(req, res) {
   if (!req.body.laneId) {
     res.status(400).end();

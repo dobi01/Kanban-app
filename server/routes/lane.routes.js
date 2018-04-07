@@ -9,6 +9,9 @@ router.route('/lanes').get(LaneController.getLanes);
 // Add a new lane
 router.route('/lanes').post(LaneController.addLane);
 
+// Edit a lane
+router.route('/lanes/:laneId').put(LaneController.editLane);
+
 // Delete a lane by laneId
 router.route('/lanes/:laneId').delete(LaneController.deleteLane);
 
