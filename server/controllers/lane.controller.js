@@ -1,4 +1,5 @@
 import Lane from '../models/lane';
+import Note from '../models/note';
 import uuid from 'uuid';
 
 export function getSomething(req, res) {
@@ -37,8 +38,18 @@ export function deleteLane(req, res) {
       res.status(500).send(err);
     }
 
-    lane.remove(() => {
-      res.status(200).end();
-    });
+    if (lane) {
+      lane.notes.forEach(el => {
+        Note.findByIdAndRemove(el._id).exec(error => {
+          if (error) {
+            res.status(500).send(error);
+          }
+        });
+      });
+
+      lane.remove(() => {
+        res.status(200).end();
+      });
+    }
   });
 }
