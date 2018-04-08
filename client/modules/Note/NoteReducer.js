@@ -1,5 +1,4 @@
 import { CREATE_NOTE, UPDATE_NOTE, DELETE_NOTE, CREATE_NOTES, EDIT_NOTE } from './NoteActions';
-
 import omit from 'lodash/omit';
 
 const initialState = {};

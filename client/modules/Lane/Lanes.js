@@ -3,8 +3,8 @@ import Lane from './LaneContainer.js';
 
 const Lanes = ({ lanes }) => {
   return (
-    <div className="lanes">{lanes.map(lane =>
-      <Lane className="lane" key={lane.id} lane={lane} />
+    <div>{lanes.map(lane =>
+      <Lane key={lane.id} lane={lane} />
     )}</div>
   );
 };
