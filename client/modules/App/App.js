@@ -9,10 +9,6 @@ import Helmet from 'react-helmet';
 import DevTools from './components/DevTools';
 import Header from './components/Header/Header';
 
-// Import Actions
-import { toggleAddPost } from './AppActions';
-import { switchLanguage } from '../../modules/Intl/IntlActions';
-
 export class App extends Component {
   constructor(props) {
     super(props);
@@ -23,10 +19,6 @@ export class App extends Component {
     this.setState({isMounted: true}); // eslint-disable-line
   }
 
-  toggleAddPostSection = () => {
-    this.props.dispatch(toggleAddPost());
-  };
-
   render() {
     return (
       <div>
@@ -34,7 +26,6 @@ export class App extends Component {
         <div>
           <Helmet
             title="kanban.me"
-            titleTemplate="%s - Kanban App"
             meta={[
               { charset: 'utf-8' },
               {
@@ -47,11 +38,7 @@ export class App extends Component {
               },
             ]}
           />
-          <Header
-            switchLanguage={lang => this.props.dispatch(switchLanguage(lang))}
-            intl={this.props.intl}
-            toggleAddPost={this.toggleAddPostSection}
-          />
+          <Header />
           <div className={styles.container}>
             {this.props.children}
           </div>
@@ -64,7 +51,6 @@ export class App extends Component {
 App.propTypes = {
   children: PropTypes.object.isRequired,
   dispatch: PropTypes.func.isRequired,
-  intl: PropTypes.object.isRequired,
 };
 
 // Retrieve data from store as props

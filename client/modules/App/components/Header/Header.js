@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 
 // Import Style
 import styles from './Header.css';
@@ -15,12 +15,6 @@ export function Header() {
 
 Header.contextTypes = {
   router: React.PropTypes.object,
-};
-
-Header.propTypes = {
-  toggleAddPost: PropTypes.func.isRequired,
-  switchLanguage: PropTypes.func.isRequired,
-  intl: PropTypes.object.isRequired,
 };
 
 export default Header;
