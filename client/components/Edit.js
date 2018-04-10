@@ -15,13 +15,13 @@ export default class Edit extends Component {
     }
   }
   renderDelete = () => {
-    return <button className={styles.delete} onClick={this.props.onDelete}>×</button>;
+    return <button className={styles.delete} onClick={this.props.onDelete}>–</button>;
   }
   renderValue = () => {
     const { value, onDelete, onValueClick } = this.props;
 
     return (
-      <div>
+      <div className={styles.container}>
         <span className={styles.value} onClick={onValueClick}>{value}</span>
         {onDelete ? this.renderDelete() : null}
       </div>
@@ -53,4 +53,5 @@ Edit.propTypes = {
   onValueClick: PropTypes.func,
   onDelete: PropTypes.func,
   editing: PropTypes.bool,
+  className: PropTypes.string,
 };

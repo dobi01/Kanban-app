@@ -1,3 +1,21 @@
 .value {
-  color: green;
+  line-height: 25px;
+}
+
+.container::before,
+.container::after {
+	clear: both;
+	content: "";
+	display: table;
+}
+
+.delete {
+  margin-right: 10px;
+  border-radius: 50%;
+  border: none;
+  padding: 0 8px;
+  height: 25px;
+  font-size: 16px;
+  line-height: 25px;
+  float: right;
 }

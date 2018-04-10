@@ -16,7 +16,7 @@ const Kanban = (props) => (
       onClick={() => props.createLane({
         name: 'New lane',
       })}
-    >Add lane</button>
+    >ADD LANE</button>
     <Lanes lanes={props.lanes} />
   </div>
 );

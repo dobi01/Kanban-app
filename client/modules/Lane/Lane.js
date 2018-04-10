@@ -19,16 +19,14 @@ const Lane = (props) => {
           onValueClick={() => editLane(lane.id)}
           onUpdate={name => updateLane({ ...lane, name, editing: false })}
         />
-        <div className={styles.LaneAddNote}>
-          <button onClick={() => addNote({ task: 'New Note' }, laneId)}>Add Note</button>
-        </div>
+        <button className={styles.AddNote} onClick={() => addNote({ task: 'New note' }, laneId)}>+</button>
       </div>
       <NotesContainer
         notes={laneNotes}
         laneId={laneId}
       />
-      <div className={styles.LaneDelete}>
-        <button onClick={() => deleteLane(laneId)}>Remove Lane</button>
+      <div>
+        <button className={styles.LaneDelete} onClick={() => deleteLane(laneId)}>REMOVE LANE</button>
       </div>
     </div>
   );
