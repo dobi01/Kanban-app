@@ -46,18 +46,6 @@ export function editLane(req, res) {
   });
 }
 
-// export function updateLane(req, res) {
-//   if (!req.body.name) {
-//     res.status(403).end();
-//   }
-//   Lane.updateOne({ id: req.params.laneId }, { name: req.body.name }, (err) => {
-//     if (err) {
-//       res.status(500).send(err);
-//     }
-//     res.status(200).end();
-//   });
-// }
-
 export function deleteLane(req, res) {
   Lane.findOne({ id: req.params.laneId }).exec((err, lane) => {
     if (err) {

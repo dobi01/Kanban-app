@@ -18,7 +18,7 @@ const noteSource = {
 };
 
 const noteTarget = {
-  hover(targetProps, monitor) {
+  drop(targetProps, monitor) {
     const sourceProps = monitor.getItem();
 
     if (targetProps.id !== sourceProps.id) {

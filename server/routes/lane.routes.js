@@ -12,9 +12,6 @@ router.route('/lanes').post(LaneController.addLane);
 // Edit a lane by laneId
 router.route('/lanes/:laneId').put(LaneController.editLane);
 
-// Update a lane by laneId
-// router.route('/lanes/:laneId').put(LaneController.updateLane);
-
 // Delete a lane by laneId
 router.route('/lanes/:laneId').delete(LaneController.deleteLane);
 
