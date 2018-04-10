@@ -4,8 +4,8 @@ import { deleteNoteRequest, editNote, updateNoteRequest, moveWithinLane } from '
 
 const mapDispatchToProps = {
   editNote,
-  onUpdate: updateNoteRequest,
-  onDelete: deleteNoteRequest,
+  updateNote: updateNoteRequest,
+  deleteNote: deleteNoteRequest,
   moveWithinLane,
 };
 
