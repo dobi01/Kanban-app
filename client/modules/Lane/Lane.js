@@ -1,14 +1,15 @@
 import React, { PropTypes } from 'react';
 import NotesContainer from '../Note/NotesContainer';
 import Edit from '../../components/Edit';
+import { fetchLanes } from './LaneActions';
 
 import styles from './Lane.css';
 
 const Lane = (props) => {
-  const { lane, laneNotes, updateLane, addNote, deleteLane, editLane } = props;
+  const { connectDropTarget, lane, laneNotes, editLane, addNote, updateLane, deleteLane } = props;
   const laneId = lane.id;
 
-  return (
+  return connectDropTarget(
     <div className={styles.Lane}>
       <div className={styles.LaneHeader}>
         <Edit
@@ -32,6 +33,8 @@ const Lane = (props) => {
     </div>
   );
 };
+
+Lane.need = [() => { return fetchLanes(); }];
 
 Lane.propTypes = {
   lane: PropTypes.object,
