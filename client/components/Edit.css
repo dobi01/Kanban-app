@@ -2,6 +2,10 @@
   line-height: 25px;
 }
 
+.enterMe {
+  color: red !important;
+}
+
 .container::before,
 .container::after {
 	clear: both;

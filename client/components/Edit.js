@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react';
 import styles from './Edit.css';
-
 export default class Edit extends Component {
   checkEnter = (e) => {
     if (e.key === 'Enter') {
@@ -8,7 +7,11 @@ export default class Edit extends Component {
     }
   }
   finishEdit = (e) => {
-    const value = e.target.value;
+    let value = e.target.value;
+
+    if (!value.length) {
+      value = 'Name: Enter me!';
+    }
 
     if (this.props.onUpdate) {
       this.props.onUpdate(value.trim());
@@ -22,7 +25,7 @@ export default class Edit extends Component {
 
     return (
       <div className={styles.container}>
-        <span className={styles.value} onClick={onValueClick}>{value}</span>
+        <span className={value === 'Name: Enter me!' ? 'enterMe' : 'value'} onClick={onValueClick}>{value}</span>
         {onDelete ? this.renderDelete() : null}
       </div>
     );
