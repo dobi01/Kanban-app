@@ -25,7 +25,7 @@ export default class Edit extends Component {
 
     return (
       <div className={styles.container}>
-        <span className={value === 'Name: Enter me!' ? 'enterMe' : 'value'} onClick={onValueClick}>{value}</span>
+        <span className={value === 'Name: Enter me!' ? styles.enterMe : styles.value} onClick={onValueClick}>{value}</span>
         {onDelete ? this.renderDelete() : null}
       </div>
     );
