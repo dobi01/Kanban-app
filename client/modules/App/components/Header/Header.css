@@ -1,14 +1,12 @@
 .header {
-  background: #eee;
-  background-size: cover;
-  border-bottom: 1px solid #ccc;
+  background: rgb(245, 202, 118);
 }
 
 .content {
   width: 100%;
   max-width: 980px;
   margin: auto;
-  padding: 64px 16px;
+  padding: 30px 16px;
   overflow: auto;
 }
 

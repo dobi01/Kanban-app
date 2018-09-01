@@ -25,6 +25,8 @@
   height: 25px;
   font-size: 18px;
   line-height: 25px;
+  cursor: pointer;
+  background: #00CECE;
 }
 
 .LaneDelete {
@@ -33,4 +35,5 @@
   border: none;
   padding: 5px 10px;
   height: 25px;
+  cursor: pointer;
 }
